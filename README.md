@@ -12,3 +12,5 @@ This project is for finding & showing the differences (duplications, Wrong forma
 ### How it works
 
 #### The application use the first 10 lines of your data as sample and search for differences between sample and rest of your data
+
+### *Under Construction*
