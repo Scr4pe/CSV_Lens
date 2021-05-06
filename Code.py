@@ -1,12 +1,28 @@
 # Import the following Modules
 from tkinter import *
+from tkinter import messagebox
 import csv
 import os
 
+# Variables
+Path_right_button_color ="#659658"
+Path_right_button_color_clicked = "#006400"
+
+Path_wrong_path_button_color = "#ae0000"
+Path_wrong_path_button_color_clicked = "#8B0000"
+
+Path_wrong_file_button_color = "#ae0000"
+Path_wrong_file_button_clicked = "#8B0000"
+
+Path_isnt_csv_message = "File is wrong\nTry a file like\n.csv"
+Path_is_wrong_message = "Path is wrong\nTry format like\n"+ "F:/User/Code/test.csv"
+
+
 root = Tk()
 path = Entry(root,width=50)
-path.pack()
-path.insert(0,"Check Path lll")
+path.pack(side="left",anchor="nw")
+
+
 # No clue
 def __init__(self, master=None):
     super().__init__(master)
@@ -24,14 +40,30 @@ def create_widgets(self):
 # Delete this
 def say_hi(self):
     print("hi there, everyone!")
-# This function checks if your csv file exists 
+
+# This function checks if your path to csv is valid
 def check_path_csv():
-    # If input is ...
+    # First check if path is valid
     try:
         trying = open(path.get())
-        print("file exists")
+        # Change type from Entry to string (to work with endswith)
+        path_type = str(path.get())
+        # Second check if file ends with csv
+        if path_type.endswith('.csv'):
+                Path_button.configure(background = Path_right_button_color, activebackground = Path_right_button_color_clicked)
+        # If file isnt csv
+        else:
+                # change color to red
+                Path_button.configure(background = Path_wrong_file_button_color, activebackground = Path_wrong_file_button_clicked)
+                # Show message wrong filetype
+                messagebox.showinfo(title="ERROR",message=Path_isnt_csv_message)
+    # If path doesnt work
     except IOError:
-        print("path not accessible")
+        Path_button.configure(background = Path_wrong_button_color, activebackground = Path_wrong_button_color_clicked)
+        messagebox.showinfo(title="ERROR",message=Path_is_wrong_message)
+    
+
+
         
 #    if (path.get() == 'lol'):
 #        print("lol")
@@ -41,8 +73,11 @@ def check_path_csv():
 
 # Start Class Application
 
-Path_button = Button(root, text="Check CSV:", command=check_path_csv)
-Path_button.pack()
+
+
+
+Path_button = Button(root, text="Check CSV:", command=check_path_csv,height=1)
+Path_button.pack(side="left",anchor="nw")
 #Path.pack(side="top",archor="nw")
 
 #T = Text(root,height=1, width=30)
