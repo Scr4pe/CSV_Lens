@@ -21,4 +21,10 @@ This project is for ***finding & showing*** differences ***(duplications, Wrong 
 * Basic searching Algorithm (spaces, NA and other blacklisted variables)
 * The application use the first 10 lines of your data as sample and search for differences between sample and rest of your data
 
+### Tutorial
+
+* Put in the path of your csv file
+* Put in the numbers of lines to skip to the data
+* Select which Alogorithm to use
+
 ### *Under Construction*
