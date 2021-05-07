@@ -5,23 +5,15 @@ import csv
 import os
 
 # Variables
+# Variables about the path
 Path_right_button_color ="#659658"
 Path_right_button_color_clicked = "#006400"
-
 Path_wrong_path_button_color = "#ae0000"
 Path_wrong_path_button_color_clicked = "#8B0000"
-
 Path_wrong_file_button_color = "#ae0000"
 Path_wrong_file_button_clicked = "#8B0000"
-
 Path_isnt_csv_message = "File is wrong\nTry a file like\n.csv"
 Path_is_wrong_message = "Path is wrong\nTry format like\n"+ "F:/User/Code/test.csv"
-
-
-root = Tk()
-path = Entry(root,width=50)
-path.pack(side="left",anchor="nw")
-
 
 # No clue
 def __init__(self, master=None):
@@ -59,54 +51,64 @@ def check_path_csv():
                 messagebox.showinfo(title="ERROR",message=Path_isnt_csv_message)
     # If path doesnt work
     except IOError:
-        Path_button.configure(background = Path_wrong_button_color, activebackground = Path_wrong_button_color_clicked)
+        Path_button.configure(background = Path_wrong_path_button_color, activebackground = Path_wrong_path_button_color_clicked)
         messagebox.showinfo(title="ERROR",message=Path_is_wrong_message)
+
+# It is the basic informations every Algorithm need from the csv
+def Algo_basic():
+    # import Path
+    print(path_type)
+    # 
+# Ask the user if this is the right start line
+def start_lines():
+    trying = open(path.get())
+    # Message the user if this is right
+    # Add if statement in the messagebox
+    messagebox.showinfo(title="ERROR",message=trying)
     
 
 
-        
-#    if (path.get() == 'lol'):
-#        print("lol")
-#    # If input isnt...
-#    else:
-#        print("WTF")
-
-# Start Class Application
-
-
-
-
-Path_button = Button(root, text="Check CSV:", command=check_path_csv,height=1)
+root = Tk()
+path = Entry(root,width=30,font="12",borderwidth=2)
+path.pack(side="left",anchor="nw")
+Path_button = Button(root, text="Check CSV:", command=check_path_csv,height=1,padx=1,pady=1)
 Path_button.pack(side="left",anchor="nw")
-#Path.pack(side="top",archor="nw")
+
+skip = Entry(root,width=10,font="12",borderwidth=2)
+skip.pack(side="left",anchor="nw")
+#font="Times 100",height=10,padx=1,pady=1
+
+
+skip_button = Button(root, text="Skip lines", command=start_lines,height=1,padx=1,pady=1)
+skip_button.pack(side="left",anchor="n")
 
 #T = Text(root,height=1, width=30)
 #T.pack(side="top", anchor="nw")
 #T.insert(END,"Path:")
 #label = Label(root, text="Enter name")
 
-text_widget = Text(root, height=5, width=40,)
+#text_widget = Text(root, height=5, width=40,)
  
 # Create a scrollbar
-scroll_bar = Scrollbar(root)
+#scroll_bar = Scrollbar(root)
  
 # Pack the scroll bar
 # Place it to the right side, using tk.RIGHT
-scroll_bar.pack(side="right")
+#scroll_bar.pack(side="right")
  
 # Pack it into our tkinter application
 # Place the text widget to the left side
-text_widget.pack(side="left")
+#text_widget.pack(side="left")
  
-long_text = """This is a multiline string.
-We can write this in multiple lines too!
-Hello from AskPython. This is the third line.
-This is the fourth line. Although the length of the text is longer than
-the width, we can use tkinter's scrollbar to solve this problem!
-"""
+#long_text = """This is a multiline string.
+#We can write this in multiple lines too!
+#Hello from AskPython. This is the third line.
+#This is the fourth line. Although the length of the text is longer than
+#the width, we can use tkinter's scrollbar to solve this problem!
+#"""
 
 # Insert text into the text widget
-text_widget.insert(END, long_text)
+#text_widget.insert(END, long_text)
 root.iconbitmap(r"../CSV_Lens/lens.ico")
 # Settings
 # Title shown in the window
