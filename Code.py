@@ -4,6 +4,8 @@ from tkinter import messagebox
 import csv
 import os
 
+# Import Algos and let them start after Menu Algo_selected
+
 # Variables
 # Variables about the path
 Path_right_button_color ="#659658"
@@ -68,19 +70,21 @@ def start_lines():
         int(skipping)
         # Change color to green
         skip_button.configure(background = skip_button_right_color, activebackground = skip_button_right_color_clicked)
-        # 
-
         # Open CSV file and ask if this is the first line of data not the header
         csv_file = open(path.get())
         csv_reader = csv.reader(csv_file)
-        while (skipping > 0):
-            csv_reader = next(csv_reader)
-            skipping = skipping - 1
+        print(skipping)
+        # While lines to skip is higher as 1 repeat
+        while int(skipping) > 0:
+            # Jump to the next element
+            csv_jump = next(csv_reader)
+            # Lower counter to jump to the next line by 1
+            skipping = int(skipping) - 1
+        # After no line are anymore
         else:
-            # if row in csv_reader:
-            messagebox.showinfo(title="Is this data ?",message = csv_reader)    
-
-
+         #   csv_jump = csv_reader
+            # After all skiped lines ask if this is data
+            messagebox.showinfo(title="Is this data ?",message = csv_jump)    
     # If value type isnt integer or string
     except ValueError:
         # Try value type is string
@@ -97,17 +101,12 @@ def start_lines():
             # Show message imput is wrong  
             messagebox.showinfo(title="ERROR",message=skip_is_unkown_message)
 
-    # Message the user if this is right
-    # Add if statement in the messagebox
 
 # It is the basic informations every Algorithm need from the csv
 def Algo_basic():
     # import Path
     print(path_type)
     #
-
-
-
 
 root = Tk()
 path = Entry(root,width=30,font="12",borderwidth=2)
@@ -122,6 +121,15 @@ skip.pack(side="left",anchor="nw")
 
 skip_button = Button(root, text="Skip lines", command=start_lines,height=1,padx=1,pady=1)
 skip_button.pack(side="left",anchor="n")
+
+c1 = Checkbutton(root, text='Python',onvalue=1, offvalue=0) .grid(grid_anchor="left")
+c1.pack(side="left",anchor="n")
+c2 = Checkbutton(root, text='C++',onvalue=1, offvalue=0)
+c2.pack(side="left",anchor="n")
+
+
+
+# Menu Algos_select
 
 #T = Text(root,height=1, width=30)
 #T.pack(side="top", anchor="nw")
