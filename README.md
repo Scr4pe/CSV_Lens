@@ -26,5 +26,6 @@ This project is for ***finding & showing*** differences ***(duplications, Wrong 
 * Put in the path of your csv file
 * Put in the numbers of lines to skip to the data
 * Select which Alogorithm to use
+* Press start
 
 ### *Under Construction*
