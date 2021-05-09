@@ -1,4 +1,4 @@
-# CSV Lens
+# <img src="https://cdn4.iconfinder.com/data/icons/hodgepodge-free/32/lens_aperture_camera_focus-512.png" height=40 align=top> CSV Lens
 
 ## ***Project description***
 
@@ -29,3 +29,5 @@ This project is for ***finding & showing*** differences ***(duplications, Wrong 
 * Press start
 
 ### *Under Construction*
+
+logo from https://cdn4.iconfinder.com/data/icons/hodgepodge-free/32/lens_aperture_camera_focus-512.png
