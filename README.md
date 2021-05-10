@@ -1,4 +1,4 @@
-# <img src="https://cdn4.iconfinder.com/data/icons/hodgepodge-free/32/lens_aperture_camera_focus-512.png" height=40 align=top> CSV Lens
+# CSV Lens
 
 ## ***Project description***
 
