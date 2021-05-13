@@ -23,10 +23,10 @@ This project is for ***finding & showing*** differences ***(duplications, Wrong 
 
 ### Tutorial
 
-* Put in the path of your csv file
-* Put in the numbers of lines to skip to the data
-* Select which Alogorithm to use
-* Press start
+1. Put in the path of your csv file
+2. Put in the numbers of lines to skip to the data
+3. Select which Algorithm to use
+4. Press start
 
 ### *Under Construction*
 
