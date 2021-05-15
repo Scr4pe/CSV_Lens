@@ -101,6 +101,10 @@ def start_lines():
             # Show message imput is wrong  
             messagebox.showinfo(title="ERROR",message=skip_is_unkown_message)
 
+# Contol function for what you want to select
+def Algo_selection():
+    print("lol")
+
 
 # It is the basic informations every Algorithm need from the csv
 def Algo_basic():
@@ -109,12 +113,12 @@ def Algo_basic():
     #
 
 root = Tk()
-path = Entry(root,width=30,font="12",borderwidth=2)
+path = Entry(root,width=30,font="12",borderwidth=2, justify=CENTER)
 path.pack(side="left",anchor="nw")
 Path_button = Button(root, text="Check CSV:", command=check_path_csv,height=1,padx=1,pady=1)
 Path_button.pack(side="left",anchor="nw")
 
-skip = Entry(root,width=10,font="12",borderwidth=2)
+skip = Entry(root,width=10,font="12",borderwidth=2, justify=CENTER)
 skip.pack(side="left",anchor="nw")
 #font="Times 100",height=10,padx=1,pady=1
 
@@ -122,8 +126,18 @@ skip.pack(side="left",anchor="nw")
 skip_button = Button(root, text="Skip lines", command=start_lines,height=1,padx=1,pady=1)
 skip_button.pack(side="left",anchor="n")
 
-c1 = Checkbutton(root, text='Python',onvalue=1, offvalue=0) .grid(grid_anchor="left")
-c1.pack(side="left",anchor="n")
+# Create Algorithm menu
+food = LabelFrame(root, text="Food")
+food.pack(ipadx=10,anchor="n")
+Checkbutton(food, text="snacks").pack()
+Checkbutton(food, text="Drinks").pack()
+Checkbutton(food, text="Meal").pack()
+
+
+Label (root, text="Algorithm Center",padx=5,pady=5)
+#.grid(row=0,column=0,padx=5,pady=5)
+c1 = Checkbutton(root, text='Python',onvalue=1, offvalue=0)
+c1.pack(padx=20,pady=10)
 c2 = Checkbutton(root, text='C++',onvalue=1, offvalue=0)
 c2.pack(side="left",anchor="n")
 
