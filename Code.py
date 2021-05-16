@@ -172,7 +172,7 @@ c2.pack(side="left",anchor="n")
 
 # Insert text into the text widget
 #text_widget.insert(END, long_text)
-root.iconbitmap(r"../CSV_Lens/lens.ico")
+root.iconbitmap(r"../CSV_Lens/CSV_lens_logo.ico")
 # Settings
 # Title shown in the window
 root.title("CSV Lens")
