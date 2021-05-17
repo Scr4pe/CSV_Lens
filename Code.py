@@ -66,6 +66,7 @@ def start_lines():
     trying = open(path.get())
     skipping = skip.get()
     # Try value type is integer
+    
     try:
         int(skipping)
         # Change color to green
