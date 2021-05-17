@@ -104,6 +104,7 @@ def start_lines():
 # Contol function for what you want to select
 def Algo_selection():
     print("lol")
+    
 
 
 # It is the basic informations every Algorithm need from the csv
