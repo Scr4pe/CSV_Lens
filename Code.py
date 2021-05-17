@@ -114,9 +114,34 @@ def Algo_basic():
 
 root = Tk()
 path = Entry(root,width=30,font="12",borderwidth=2, justify=CENTER)
-path.pack(side="left",anchor="nw")
+path.pack(anchor="nw",side="left")
+
+# Create Algorithm menu
+food = LabelFrame(root, text="Food")
+food.pack(ipadx=10,anchor="nw")
+# try n,ne,e,se,s,sw,w,nw,center
+Checkbutton(food, text="snacks").pack()
+Checkbutton(food, text="Drinks").pack()
+Checkbutton(food, text="Meal").pack()
+
+
+
 Path_button = Button(root, text="Check CSV:", command=check_path_csv,height=1,padx=1,pady=1)
 Path_button.pack(side="left",anchor="nw")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 skip = Entry(root,width=10,font="12",borderwidth=2, justify=CENTER)
 skip.pack(side="left",anchor="nw")
@@ -126,12 +151,7 @@ skip.pack(side="left",anchor="nw")
 skip_button = Button(root, text="Skip lines", command=start_lines,height=1,padx=1,pady=1)
 skip_button.pack(side="left",anchor="n")
 
-# Create Algorithm menu
-food = LabelFrame(root, text="Food")
-food.pack(ipadx=10,anchor="n")
-Checkbutton(food, text="snacks").pack()
-Checkbutton(food, text="Drinks").pack()
-Checkbutton(food, text="Meal").pack()
+
 
 
 Label (root, text="Algorithm Center",padx=5,pady=5)
@@ -179,7 +199,8 @@ root.title("CSV Lens")
 # Minimum Size of the window
 root.minsize(400,400)
 # Startup Size of the window
-root.geometry("500x500")
+root.geometry("700x700")
+#normal size 500x500
 # Icon in the window
 #os.chdir("/CSV_Lens/code")
 #os.getcwd()
